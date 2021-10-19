@@ -74,6 +74,8 @@ def adding_1(message):
 
 def adding_2(message):
     db[str(message.from_user.id)]["pupils"][message.text] = {}
+    db[str(message.from_user.id)]["pupils"][message.text]["credit"] = 0
+    db[str(message.from_user.id)]["pupils"][message.text]["cost"] = 0
     update_database()
     markup = telebot.types.ForceReply(selective=False)
     bot.send_message(message.from_user.id, "Имя ученика в творительном падеже (для отчетов)", reply_markup=markup)
