@@ -133,7 +133,7 @@ def remove_2(message):
     pupils.pop(message.text)
     update_database()
     markup = types.ReplyKeyboardRemove(selective=False)
-    bot.send_message(message.from_user.id, "Ученик удален",reply_markup=markup)
+    bot.send_message(message.from_user.id, "Ученик удален", reply_markup=markup)
 
 
 # просмотр учеников
@@ -191,12 +191,14 @@ def report_5(message, pupil, reply):
     markup = types.ReplyKeyboardRemove(selective=False)
     if message.text == 'Отправить':
         if users.get(pupil["contact"], 0) == 0:
-            bot.send_message(message.from_user.id, "Сообщение не отправлено, получатель не зарегистрирован", reply_markup=markup)
+            bot.send_message(message.from_user.id, "Сообщение не отправлено, получатель не зарегистрирован",
+                             reply_markup=markup)
             return
         bot.send_message(int(users.get(pupil["contact"], users["torenu"])), reply)
         pupil["credit"] = pupil.get("credit", 0) - pupil.get("cost", 0)
         update_database()
-        bot.send_message(message.from_user.id, "Сообщение отправлено, со счета списано {} р.".format(pupil["cost"]), reply_markup=markup)
+        bot.send_message(message.from_user.id, "Сообщение отправлено, со счета списано {} р.".format(pupil["cost"]),
+                         reply_markup=markup)
     else:
         bot.send_message(message.from_user.id, "Сообщение не отправлено", reply_markup=markup)
 
