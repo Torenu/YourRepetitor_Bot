@@ -119,6 +119,9 @@ def adding_4(message, name, contact):
 # удаление учеников
 @bot.message_handler(commands=['remove'])
 def remove_1(message):
+    if db.get(str(message.from_user.id), 0) == 0:
+        bot.send_message(message.from_user.id, "Сначала зарегистрируйтесь")
+        return
     pupils = db[str(message.from_user.id)]["pupils"]
     if len(pupils) == 0:
         bot.send_message(message.from_user.id, "У вас нет учеников")
@@ -141,6 +144,9 @@ def remove_2(message):
 # просмотр учеников
 @bot.message_handler(commands=['check'])
 def check_pupils(message):
+    if db.get(str(message.from_user.id), 0) == 0:
+        bot.send_message(message.from_user.id, "Сначала зарегистрируйтесь")
+        return
     pupils = db[str(message.from_user.id)]["pupils"]
     if len(pupils) == 0:
         bot.send_message(message.from_user.id, "У вас нет учеников")
@@ -151,6 +157,9 @@ def check_pupils(message):
 
 @bot.message_handler(commands=['send'])
 def report_1(message):
+    if db.get(str(message.from_user.id), 0) == 0:
+        bot.send_message(message.from_user.id, "Сначала зарегистрируйтесь")
+        return
     pupils = db[str(message.from_user.id)]["pupils"]
     markup = types.ReplyKeyboardMarkup()
     for pupil in pupils:
@@ -207,8 +216,14 @@ def report_5(message, pupil, reply):
 
 @bot.message_handler(commands=['payment'])
 def pay_1(message):
+    if db.get(str(message.from_user.id), 0) == 0:
+        bot.send_message(message.from_user.id, "Сначала зарегистрируйтесь")
+        return
     pupils = db[str(message.from_user.id)]["pupils"]
     markup = types.ReplyKeyboardMarkup()
+    if len(pupils) == 0:
+        bot.send_message(message.from_user.id, "У вас нет учеников")
+        return
     for pupil in pupils:
         markup.row(types.KeyboardButton(pupil))
     bot.send_message(message.from_user.id, "Выберите ученика:", reply_markup=markup)
