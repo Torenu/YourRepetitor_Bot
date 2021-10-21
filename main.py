@@ -169,6 +169,9 @@ def report_1(message):
 
 
 def report_2(message):
+    if db[str(message.from_user.id)]["pupils"].get(message.text, None) is None:
+        bot.send_message(message.from_user.id, "Такого ученика нету")
+        return
     markup = types.ReplyKeyboardMarkup()
     markup.row(types.KeyboardButton("-"),
                types.KeyboardButton("-+"),
@@ -231,6 +234,9 @@ def pay_1(message):
 
 
 def pay_2(message):
+    if db[str(message.from_user.id)]["pupils"].get(message.text, None) is None:
+        bot.send_message(message.from_user.id, "Такого ученика нету")
+        return
     bot.send_message(message.from_user.id, "Введите сумму оплаты:")
     bot.register_next_step_handler(message, lambda m: pay_3(message, m.text))
 
