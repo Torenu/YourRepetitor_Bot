@@ -42,11 +42,6 @@ def registration_2(message):
     help_message(message)
 
 
-@bot.message_handler(commands=['stop'])
-def debug_message(*args):
-    bot.stop_polling()
-
-
 @bot.message_handler(commands=['debug'])
 def debug_message(*args):
     debug()
