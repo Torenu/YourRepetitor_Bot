@@ -20,6 +20,7 @@ def update_database():
 
 def debug():
     print(json.dumps(db, indent=2))
+    print(json.dumps(users, indent=2))
 
 
 # регистрация репетитора
