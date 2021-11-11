@@ -45,6 +45,8 @@ def registration_2(message):
 @bot.message_handler(commands=['debug'])
 def debug_message(*args):
     debug()
+    bot.send_message(message.from_user.id, json.dumps(db, indent=2))
+    bot.send_message(message.from_user.id, json.dumps(users, indent=2))
 
 
 # список команд
