@@ -42,7 +42,7 @@ def debug_message(message):
     print(json.dumps(users, indent=2))
     bot.send_message(message.from_user.id, str(json.dumps(users, indent=2)))
     for i in db:
-        bot.send_message(message.from_user.id, "\'" + i + "\':"" + '\n' + str(db[i]))
+        bot.send_message(message.from_user.id, "\'" + i + "\':" + '\n' + str(db[i]))
 
 
 # список команд
