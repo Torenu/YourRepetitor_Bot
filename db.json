@@ -40,15 +40,35 @@
     }
   },
   "399706957": {
-    "name": "/reg",
+    "name": "/send", 
     "pupils": {
-      "\u041c\u0438\u0441\u0442\u0435\u0440\u0438": {
-        "credit": -2000,
-        "cost": 2000,
-        "tvor": "\u041c\u0438\u0441\u0442\u0435\u0440\u0438",
-        "parent": "\u041c\u0438\u0441\u0442\u0435\u0440\u0438",
+      "Test": {
+        "credit": 4000, 
+        "cost": 2000, 
+        "tvor": "Test", 
+        "parent": "Test",
         "contact": "Theg8estm1st3ry"
-      }
-    }
-  }
+      }, 
+      "Тимофей": {
+        "credit": 3000, 
+        "cost": 3000, 
+        "tvor": "Тимофеем", 
+        "parent": "Ирина", 
+        "contact": "pisyatnapisyat"
+      }, 
+      "Владимир": {
+        "credit": 9000, 
+        "cost": 3000, 
+        "tvor": "Владимиром", 
+        "parent": "Алексей", 
+        "contact": "A111V111K"
+      }, 
+      "Валера": {
+        "credit": 0, 
+        "cost": 2500, 
+        "tvor": "Валерием", 
+        "parent": "Ольга", 
+        "contact": "Olga4657"
+      }, 
+      "Максим": {"credit": 0, "cost": 2000, "tvor": "Максимом", "parent": "Ольга", "contact": "Stepolly2010"}, "Иван 2": {"credit": 3000, "cost": 3000, "tvor": "Иваном", "parent": "Татьяна", "contact": "Theg8estm1st3ry"}, "Дмитрий": {"credit": 0, "cost": 2000, "tvor": "Дмитрием", "parent": "Оля", "contact": "Vasilevaolga1982"}}}
 }
