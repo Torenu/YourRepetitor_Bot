@@ -18,11 +18,6 @@ def update_database():
         file.write(json.dumps(db, indent=2))
 
 
-def debug():
-    print(json.dumps(db, indent=2))
-    print(json.dumps(users, indent=2))
-
-
 # регистрация репетитора
 @bot.message_handler(commands=['reg'])
 def registration_1(message):
@@ -44,7 +39,8 @@ def registration_2(message):
 
 @bot.message_handler(commands=['debug'])
 def debug_message(message):
-    debug()
+    print(json.dumps(db, indent=2))
+    print(json.dumps(users, indent=2))
     bot.send_message(message.from_user.id, json.dumps(db, indent=2))
     bot.send_message(message.from_user.id, json.dumps(users, indent=2))
 
