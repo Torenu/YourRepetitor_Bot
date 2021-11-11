@@ -70,5 +70,27 @@
         "parent": "Ольга", 
         "contact": "Olga4657"
       }, 
-      "Максим": {"credit": 0, "cost": 2000, "tvor": "Максимом", "parent": "Ольга", "contact": "Stepolly2010"}, "Иван 2": {"credit": 3000, "cost": 3000, "tvor": "Иваном", "parent": "Татьяна", "contact": "Theg8estm1st3ry"}, "Дмитрий": {"credit": 0, "cost": 2000, "tvor": "Дмитрием", "parent": "Оля", "contact": "Vasilevaolga1982"}}}
+      "Максим": {
+        "credit": 0,
+        "cost": 2000,
+        "tvor": "Максимом",
+        "parent": "Ольга",
+        "contact": "Stepolly2010"
+      },
+      "Иван 2": {
+        "credit": 3000,
+        "cost": 3000,
+        "tvor": "Иваном",
+        "parent": "Татьяна",
+        "contact": "Theg8estm1st3ry"
+      },
+      "Дмитрий": {
+        "credit": 0,
+        "cost": 2000,
+        "tvor": "Дмитрием",
+        "parent": "Оля",
+        "contact": "Vasilevaolga1982"
+      }
+    }
+  }
 }
