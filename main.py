@@ -10,7 +10,6 @@ with open("users.json") as f:
     users = json.load(f)
 
 bot = telebot.TeleBot(config.TOKEN)
-print(db)
 
 # обновление базы данных
 def update_database():
