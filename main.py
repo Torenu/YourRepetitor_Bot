@@ -41,8 +41,8 @@ def debug_message(message):
     print(json.dumps(db, indent=2))
     print(json.dumps(users, indent=2))
     bot.send_message(message.from_user.id, str(json.dumps(users, indent=2)))
-    for i in db:
-        bot.send_message(message.from_user.id, db[i])
+    for i in db.values():
+        bot.send_message(message.from_user.id, str(i))
 
 
 # список команд
