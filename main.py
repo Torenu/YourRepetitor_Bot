@@ -10,7 +10,7 @@ with open("users.json") as f:
     users = json.load(f)
 
 bot = telebot.TeleBot(config.TOKEN)
-
+print(db)
 
 # обновление базы данных
 def update_database():
@@ -41,8 +41,9 @@ def registration_2(message):
 def debug_message(message):
     print(json.dumps(db, indent=2))
     print(json.dumps(users, indent=2))
-    bot.send_message(message.from_user.id, str(json.dumps(db, indent=2)))
     bot.send_message(message.from_user.id, str(json.dumps(users, indent=2)))
+    for i in db:
+        bot.send_message(message.from_user.id, db[i])
 
 
 # список команд
